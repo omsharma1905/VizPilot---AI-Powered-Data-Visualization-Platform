@@ -1,26 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
+/* ── Tailwind v4 Design Tokens via @theme ───────────────────────────────────
+   Cinematic Editorial Visual Identity for VizPilot
+   ─────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Colors */
+  --color-background:          rgb(var(--vp-background));
+  --color-surface:             rgb(var(--vp-surface));
+  --color-surface-elevated:    rgb(var(--vp-surface-elevated));
+  --color-foreground:          rgb(var(--vp-foreground));
+  --color-foreground-muted:    rgb(var(--vp-foreground-muted));
+  --color-border:              rgba(var(--vp-border) / var(--vp-border-opacity));
+  --color-accent:              rgb(var(--vp-accent));
+  --color-accent-foreground:   rgb(var(--vp-accent-foreground));
+  --color-accent-secondary:    rgb(var(--vp-accent-secondary));
+  --color-success:             rgb(var(--vp-success));
+  --color-warning:             rgb(var(--vp-warning));
+  --color-danger:              rgb(var(--vp-danger));
+
+  /* Typography */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+
+  /* Border radius */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+
+  /* Shadows */
+  --shadow-sm:     0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md:     0 8px 24px -4px rgba(0, 0, 0, 0.5);
+  --shadow-lg:     0 16px 48px -8px rgba(0, 0, 0, 0.6);
+  --shadow-xl:     0 24px 80px -12px rgba(0, 0, 0, 0.7);
+  --shadow-glow:   0 0 50px -10px rgba(99, 102, 241, 0.35);
+  --shadow-canvas: 0 30px 100px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-float:  0 12px 40px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ── Deep Cinematic Token Values ────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --vp-background:          8 8 11;          /* Deep rich obsidian */
+  --vp-surface:             16 16 22;        /* Dark glass surface */
+  --vp-surface-elevated:    24 24 34;        /* Elevated dark surface */
+  --vp-foreground:          248 248 252;     /* Crisp high-contrast white */
+  --vp-foreground-muted:    152 150 168;     /* Refined cool slate */
+  --vp-border:              255 255 255;
+  --vp-border-opacity:      0.08;
+  --vp-accent:              99 102 241;      /* Luminous electric indigo */
+  --vp-accent-foreground:   255 255 255;
+  --vp-accent-secondary:    244 63 94;       /* Cinematic rose/red accent */
+  --vp-success:             16 185 129;      /* Emerald */
+  --vp-warning:             245 158 11;
+  --vp-danger:              239 68 68;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base Styles ─────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  background-color: rgb(var(--vp-background));
+  color: rgb(var(--vp-foreground));
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(var(--vp-background));
+  color: rgb(var(--vp-foreground));
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
+/* ── Custom cursor ───────────────────────────────────────────────────────── */
+
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  input, textarea, [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+/* ── Typography & Watermarks ─────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* Oversized background typography / watermark */
+.watermark-text {
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  white-space: nowrap;
+}
+
+.text-stroke-subtle {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  color: transparent;
+}
+
+.text-stroke-light {
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.08);
+  color: transparent;
+}
+
+/* ── Text Selection & Focus ──────────────────────────────────────────────── */
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.35);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--vp-accent));
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Reduced Motion ──────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Continuous Independent Depth Typography Animations ─────────────────── */
+
+@keyframes continuousDepthLtr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes continuousDepthRtl {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-depth-ltr {
+  animation: continuousDepthLtr 48s linear infinite;
+  will-change: transform;
+}
+
+.animate-depth-rtl {
+  animation: continuousDepthRtl 48s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-depth-ltr,
+  .animate-depth-rtl {
+    animation: none !important;
+  }
+}
+
