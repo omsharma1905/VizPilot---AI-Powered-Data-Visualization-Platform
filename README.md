@@ -6,13 +6,26 @@ VizPilot is an AI-powered data visualization platform that lets you upload your 
 
 ## ✨ Features
 
-- 📂 Upload CSV, XLSX, PDF, and DOCX files
-- 🧠 AI-powered visualization recommendations
-- 📊 Interactive charts and dashboards
-- 🔍 Automatic data profiling
-- 🔐 Secure authentication with MongoDB
-- 🛡️ Zero-Trace mode for privacy-focused analysis
-- ⚡ Fast and responsive interface
+- 📂 **Multi-Format Data Upload**  
+  Upload CSV, XLSX, PDF, or DOCX files and let VizPilot extract and understand the data automatically.
+
+- 🧠 **AI-Powered Recommendations**  
+  VizPilot analyzes your dataset and recommends suitable visualizations based on the structure and meaning of your data.
+
+- 📊 **Interactive Visualizations**  
+  Explore your data through interactive charts including bar, line, area, scatter, pie, donut, histogram, and KPI visualizations.
+
+- 📈 **Automatic Data Profiling**  
+  Automatically analyzes columns, data types, missing values, distributions, and other characteristics before generating visualizations.
+
+- 📋 **Interactive Dashboards**  
+  Turn your data into a visual dashboard with key metrics and multiple charts for easier analysis.
+
+- 🔐 **Secure Authentication**  
+  Create an account, manage your profile, and securely access your workspace with MongoDB-backed authentication.
+
+- 🛡️ **Zero-Trace Mode**  
+  Analyze sensitive data without permanently storing the uploaded dataset or its raw rows.
 
 ## 🛠️ Built With
 
