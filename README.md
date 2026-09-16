@@ -28,8 +28,8 @@ VizPilot is an AI-powered data visualization platform that lets you upload your 
 ## 🚀 Getting Started
 
 ```bash
-git clone
-cd VizPilot
+git clone https://github.com/omsharma1905/VizPilot---AI-Powered-Data-Visualization-Platform.git
+cd VizPilot---AI-Powered-Data-Visualization-Platform
 npm install
 npm run dev
 ```
