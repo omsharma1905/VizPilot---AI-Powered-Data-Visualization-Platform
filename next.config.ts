@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  agentRules: false,
   serverExternalPackages: ['pdf-parse', 'pdfjs-dist', 'mongodb', 'bcryptjs'],
   async headers() {
     return [
