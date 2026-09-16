@@ -49,10 +49,10 @@ npm run dev
 
 Create a .env.local file with your MongoDB, session, and AI credentials before running the application.
 
-📌 Project Status
+## 🚧 Development Status
 
-VizPilot is actively under development, with the core upload → analysis → recommendation → visualization → dashboard workflow implemented.
+VizPilot is an actively developed project. The core application and major workflows are already implemented, with additional features, improvements, and refinements currently in progress.
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 OM SHARMA
